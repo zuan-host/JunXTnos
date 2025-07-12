@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login VVIP</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="bg-blur"></div>
+  <div class="login-box">
+    <img src="img/hisoka.png" class="avatar" />
+    <h2>Zuan VVIP Panel</h2>
+
+    <!-- ✅ Form Kirim Bug ke PHP -->
+    <form id="bugForm">
+      <input type="text" name="nomor" placeholder="Masukkan Nomor Target" required />
+      <button type="submit">KIRIM BUG</button>
+    </form>
+
+    <!-- 🔥 Tombol Buy -->
+    <div class="fire-btn-container">
+      <a href="https://zuan-webhost.vercel.app" target="_blank" class="fire-button">
+        🔥 Mau Buy? Klik di Sini 🔥
+        <div class="fire"></div>
+        <div class="fire fire2"></div>
+      </a>
+    </div>
+
+    <p class="footer">Access reserved for elite users</p>
+  </div>
+
+  <!-- ⬇ Footer kecil bawah -->
+  <div style="
+    position: fixed;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+    font-size: 11px;
+    color: #777;
+    font-family: monospace;
+    opacity: 0.6;
+    pointer-events: none;">
+    © 2024 Powered by Junz Hosting – Xvoid CRASH
+  </div>
+
+  <!-- ✅ JavaScript Fetch -->
+  <script>
+    const form = document.querySelector("#bugForm");
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const nomor = form.nomor.value;
+
+      const res = await fetch("https://YOUR-REPLIT-NAME.repl.co/send-bug.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: "nomor=" + encodeURIComponent(nomor)
+      });
+
+      const text = await res.text();
+      alert(text);
+    });
+  </script>
+</body>
+</html>

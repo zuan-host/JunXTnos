@@ -1,0 +1,1 @@
+const res = await fetch('https://zuanbackend.000webhostapp.com/send-command.php', {
